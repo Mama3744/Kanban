@@ -1,0 +1,16 @@
+#wrapper {
+    width: 100vw;
+    margin-top: 30px;
+    height: 90vh;
+}
+
+#columns-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+app-column {
+    width: 30vw;
+}
+

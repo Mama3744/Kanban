@@ -1,0 +1,9 @@
+<div class="Log">
+    <h1>{{username}}</h1>
+    <button
+        (click)="toggleAuth.emit()"
+        [class]="isConnected ? 'connected' : ''"
+    >
+        {{ isConnected ? 'Log out' : 'Log in'}}
+    </button>
+</div>

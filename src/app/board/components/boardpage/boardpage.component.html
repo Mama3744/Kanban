@@ -1,0 +1,13 @@
+<div id="wrapper">
+    <div id="columns-wrapper">
+        @for (column of columns; track column.id) {
+            <app-column
+            [column]="column"
+            [tickets]="ticketsByColumnId[column.id]"
+            (addTicket)="addTicket(column.id)"
+            />
+        } 
+    </div>
+</div>
+
+
