@@ -23,8 +23,11 @@ export class DraggableDirective {
 
   @HostListener('dragstart', ['$event'])
   onDragStart(event: DragEvent) {
+    console.log('drag');
     if (event.dataTransfer) {
         event.dataTransfer.setData(REORDER_DROP_DATATYPE, JSON.stringify(this.appDraggableData));
+        event.dataTransfer.effectAllowed = 'move';
+        console.log(event.dataTransfer.getData(REORDER_DROP_DATATYPE));
       }
   } 
 

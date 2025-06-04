@@ -19,11 +19,13 @@ export class DroppableDirective {
 
   @HostListener('dragover', ['$event'])
   onDragOver(event: DragEvent) {
+    console.log('draover');
     event.preventDefault();
   }
 
   @HostListener('drop', ['$event'])
   onDrop(event: DragEvent) {
+    console.log("ondrop");
     event.preventDefault();
     const dt = event.dataTransfer;
 
