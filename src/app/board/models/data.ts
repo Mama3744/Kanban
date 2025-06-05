@@ -1,3 +1,4 @@
+import { waitForAsync } from "@angular/core/testing";
 import { Board } from "./models";
 
 export const allBoard: Board = {
@@ -78,3 +79,11 @@ export const allBoard: Board = {
     },
   ],
 };
+
+async function wait(miliseconds: number) {
+  return new Promise((r) => setTimeout(r, miliseconds));
+}
+export async function getData() {
+  await wait(800);
+  return allBoard;
+}

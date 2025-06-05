@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { Ticket } from '../../models/models';
 import { TitleLimiterPipe } from '../../pipes/title-limiter.pipe';
 
@@ -9,6 +9,5 @@ import { TitleLimiterPipe } from '../../pipes/title-limiter.pipe';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input({ required: true })
-  ticket!: Ticket;
+  ticket = input.required<Ticket>();
 }

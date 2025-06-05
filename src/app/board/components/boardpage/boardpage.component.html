@@ -1,12 +1,17 @@
 <div id="wrapper">
     <div id="columns-wrapper">
-        @for (column of columns; track column.id) {
-            <app-column
-            [column]="column"
-            [tickets]="ticketsByColumnId[column.id]"
-            (addTicket)="addTicket(column.id)"
-            />
-        } 
+        @if(isLoadingBoard()) {
+            <p>Loading...</p>
+        } @else {
+            @for (column of columns(); track column.id) {
+                <app-column
+                [column]="column"
+                [tickets]="ticketsByColumnId()[column.id]"
+                (addTicket)="addTicket(column.id)"
+                (reorderTicket)="onReorderTicket($event)"/>
+            } @empty {@if (hasError()) {<p>An error occured</p>} @else {<p>No column</p>}}
+        }
+        
     </div>
 </div>
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './nav-menu.component.scss'
 })
 export class NavMenuComponent {
-  @Input() isAdmin!: boolean;
+  isAdmin = input<boolean>(false);
 
 }

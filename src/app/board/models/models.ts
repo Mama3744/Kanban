@@ -27,7 +27,4 @@ export type DragDropLocation = {
   ticketId: string;
 };
 
-export type DragDropPlayload = [
-  DragDropLocation,
-  DragDropLocation
-];
+export type DragDropPayload = [DragDropLocation, DragDropLocation];

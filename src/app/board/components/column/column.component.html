@@ -18,15 +18,10 @@
 
 <div id="wrapper">
     <div class="card">
-        <h3>{{ column.title }}</h3>
-        @for (ticket of tickets; track ticket.id) {
-            <div id="list" appDroppable [columnId]="column.id">
-                <app-card 
-                [ticket]="ticket"
-                appDraggable [appDraggableData]="{
-                    id:ticket.id,
-                    columnId: column.id
-                }"/>
+        <h3>{{ column().title }}</h3>
+        @for (ticket of tickets(); track ticket.id) {
+            <div id="list" appDroppable [columnId]="column().id" (dropItem)="reorderTicket.emit($event)">
+                <app-card [ticket]="ticket" appDraggable [appDraggableData]="{id:ticket.id, columnId: column().id}"/>
             </div>
         }
         <button (click)="addTicket.emit()">Add Ticket</button>
